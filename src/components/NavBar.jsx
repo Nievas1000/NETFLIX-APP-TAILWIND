@@ -15,7 +15,9 @@ export const NavBar = () =>{
                 <Link to='/'>
                     <li className="m-4 cursor-pointer">Home</li>
                 </Link>
-                <li className="m-4 cursor-pointer">Tv Shows</li>
+                <Link to='/series'>
+                    <li className="m-4 cursor-pointer">Tv Shows</li>
+                </Link>
                 <Link to='/movies'>
                     <li className="m-4 cursor-pointer">Movies</li>
                 </Link>

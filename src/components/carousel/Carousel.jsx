@@ -1,15 +1,14 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useCarousel } from "../hooks/useCarousel";
+import { useCarousel } from "../../hooks/useCarousel";
 import { CarouselButtons } from "./CarouselButtons";
 import PropTypes from 'prop-types';
-import LoadingScreen from "./LoadingScreen";
+import LoadingScreen from "../LoadingScreen";
 
 export const Carousel = ({api_url, title}) =>{
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState()
     const [carouselRef, scrollLeft, scrollRight] = useCarousel()
-    
     useEffect(() =>{
         const getRecomended = async() =>{
             try {

@@ -1,11 +1,11 @@
-import { Carousel } from "../components/Carousel";
+import { Carousel } from "../components/carousel/Carousel";
 import {  RecomendedVideo } from "../components/RecomendedVideo";
 import { carouselAllData } from "../utils/carouselData";
 
 export const Home = () => {
   return (
     <div>
-      <RecomendedVideo id={840326}/>
+      <RecomendedVideo apiUrl={import.meta.env.VITE_MOVIES_VIDEO_API} id={840326} isMovie={true}/>
       <div className="p-8 h-full">
         {carouselAllData.map((data) =>{
           return(

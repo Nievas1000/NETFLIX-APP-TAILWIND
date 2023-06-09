@@ -71,14 +71,14 @@ export const carouselDataSeries = [
   },
   {
     title: "Documentary series",
-    url: `${import.meta.env.VITE_MOVIES_BY_GENRE_API}99`,
+    url: `${import.meta.env.VITE_SERIES_BY_GENRE_API}99`,
   },
   {
     title: "Dramas",
-    url: `${import.meta.env.VITE_MOVIES_BY_GENRE_API}18`,
+    url: `${import.meta.env.VITE_SERIES_BY_GENRE_API}18`,
   },
   {
     title: "Action & Adventure",
-    url: `${import.meta.env.VITE_MOVIES_BY_GENRE_API}10759`,
+    url: `${import.meta.env.VITE_SERIES_BY_GENRE_API}10759`,
   },
 ];

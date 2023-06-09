@@ -1,12 +1,12 @@
 import { Carousel } from "../components/Carousel";
-import { NavBar } from "../components/NavBar";
+import {  RecomendedVideo } from "../components/RecomendedVideo";
 import { carouselAllData } from "../utils/carouselData";
 
 export const Home = () => {
   return (
     <div>
-      <NavBar />
-      <div className="p-5 h-full bg-zinc-900">
+      <RecomendedVideo id={840326}/>
+      <div className="p-8 h-full">
         {carouselAllData.map((data) =>{
           return(
             <Carousel key={data.title} api_url={data.url} title={data.title} />

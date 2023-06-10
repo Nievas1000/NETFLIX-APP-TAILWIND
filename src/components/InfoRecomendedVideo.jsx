@@ -20,6 +20,16 @@ export const InfoRecomendedVideo = ({isMovie,id, videoKey}) =>{
         }
         getRecomended()
     },[id, isMovie])
+
+    const handleModalOpen = () => {
+        setShowDropdown(true);
+        document.body.classList.add('modal-open');
+      };
+    
+      const handleModalClose = () => {
+        setShowDropdown(false);
+        document.body.classList.remove('modal-open');
+      };
     return(
         <div className="absolute top-0 left-0 h-full flex items-center justify-start w-2/4 pl-24">
             <div className="w-4/6 h-full flex flex-col justify-center">
@@ -30,14 +40,14 @@ export const InfoRecomendedVideo = ({isMovie,id, videoKey}) =>{
                         <IconPlayerPlayFilled className="mr-2" />
                         Play
                     </button>
-                    <button className="bg-gray-500 text-white px-4 py-2 rounded-md shadow flex items-center justify-center" onClick={() => setShowDropdown(true)}>
+                    <button className="bg-gray-500 text-white px-4 py-2 rounded-md shadow flex items-center justify-center" onClick={handleModalOpen}>
                         <IconInfoCircle className="mr-2" />
                         More Info
                     </button>
                 </div>
             </div>
             {showDropdow && (
-                <ModalMoreInfo videoKey={videoKey} setShowDropdown={setShowDropdown} divRefSon={divRefSon} data={data} isMovie={isMovie}/>
+                <ModalMoreInfo videoKey={videoKey} setShowDropdown={handleModalClose} divRefSon={divRefSon} data={data} isMovie={isMovie}/>
             )}
 
         </div>
@@ -47,5 +57,5 @@ export const InfoRecomendedVideo = ({isMovie,id, videoKey}) =>{
 InfoRecomendedVideo.propTypes = {
     id: PropTypes.number.isRequired,
     isMovie: PropTypes.bool.isRequired,
-    videoKey: PropTypes.number.isRequired,
+    videoKey: PropTypes.string.isRequired,
 };

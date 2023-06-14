@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 import PropTypes from 'prop-types';
 import { DescriptionModal } from "./DescriptionModal";
 import { EpisodiesModal } from "./EpisodiesModal";
+import { SimilarRecommendations } from "./SimilarRecommendations";
 
 export const ModalMoreInfo = ({videoKey, setShowDropdown, divRefSon, data, isMovie}) =>{ // eslint-disable-line
 
@@ -27,7 +28,8 @@ export const ModalMoreInfo = ({videoKey, setShowDropdown, divRefSon, data, isMov
                 />
                 <div className="bg-zinc-900 pl-10 ">
                    <DescriptionModal isMovie={isMovie} data={data} />
-                   <EpisodiesModal />
+                   {!isMovie && <EpisodiesModal data={data} />}
+                   <SimilarRecommendations id={data.id} isMovie={isMovie}/>
                 </div>
             </div>
         </div>

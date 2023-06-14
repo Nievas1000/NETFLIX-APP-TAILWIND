@@ -16,15 +16,15 @@ export const DescriptionModal = ({isMovie, data}) =>{
         getRecomended()
     },[data.id, isMovie])
     return(
-        <div className="pl-10 flex">
-        <div className="w-[55%] text-white mt-3">
+        <div className="flex">
+        <div className="w-[55%] text-white mt-5">
             <div className="flex">
                 <span className="m-2">{isMovie ? data.release_date.split("-")[0] : data.first_air_date.split("-")[0]}</span>
                 <span className="m-2 border border-gray-50 rounded-md w-10 flex justify-center">{data.adult ? '18+' : '10+'}</span>
             </div>
             <p>{data.overview}</p>
         </div>
-        <div className="w-[45%] mt-3">
+        <div className="w-[45%] mt-5">
             <div className="flex ">
                 <label className="text-gray-600 ">Genres: </label>
                 <p className="ml-2 text-white text-base">{data.genres.map((genre) => genre.name).join(", ")}</p>

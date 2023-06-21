@@ -9,6 +9,7 @@ export const Carousel = ({api_url, title}) =>{
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState()
     const [carouselRef, scrollLeft, scrollRight] = useCarousel()
+
     useEffect(() =>{
         const getRecomended = async() =>{
             try {
@@ -22,6 +23,7 @@ export const Carousel = ({api_url, title}) =>{
         }
         getRecomended()
     },[api_url])
+    
     return(
         <div>
             {isLoading ? <LoadingScreen /> 
@@ -32,7 +34,7 @@ export const Carousel = ({api_url, title}) =>{
                     <div className="flex overflow-x-auto md:overflow-hidden scroll-snap-type-x-mandatory" ref={carouselRef}>
                         <div className="flex space-x-4">
                             {data?.map((x) => (
-                                <div key={x.id} className="flex-shrink-0 w-44 h-28 md:w-60 md:h-36">
+                                <div key={x.id} className="flex-shrink-0 w-44 h-28 md:w-60 md:h-36 cursor-pointer">
                                     <img
                                         src={`https://image.tmdb.org/t/p/w500${x.poster_path}`}
                                         alt={x.title}

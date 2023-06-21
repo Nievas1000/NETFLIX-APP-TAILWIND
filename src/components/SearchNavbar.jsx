@@ -1,8 +1,10 @@
 import {  IconSearch, IconUser, IconX } from "@tabler/icons-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { SearchContext } from "../context/search";
 
 export const SearchNavbar = () =>{
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const {handleSearchResults} = useContext(SearchContext)
 
     const handleSearchClick = () => {
       setIsSearchOpen(!isSearchOpen);
@@ -15,6 +17,7 @@ export const SearchNavbar = () =>{
                     isSearchOpen ? 'w-48  border-2' : 'w-0  pl-0'
                 }`}
                 placeholder="Titles,genres..."
+                onChange={(e) => handleSearchResults(e.target.value)}
             />
             {isSearchOpen ? 
                 <IconX 
